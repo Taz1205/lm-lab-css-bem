@@ -4,8 +4,10 @@
 
 .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
   margin: 0 auto;
+  height: 100vh;
   width: 80%;
 }
 
@@ -34,7 +36,13 @@
   line-height: 1.5;
   font-weight: bold;
 }
-
+.card__button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
 /* ==============
    SKINS
    ============== */
@@ -47,4 +55,14 @@
 .card--light {
   background-color: #e8e8e8;
   color: #333;
+}
+
+.card__button--danger {
+  background-color: #c00;
+  color: #fff;
+}
+
+.card__button--safe {
+  background-color: #4caf50;
+  color: #fff;
 }
