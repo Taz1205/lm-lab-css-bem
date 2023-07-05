@@ -4,9 +4,9 @@
 
 .container {
   display: flex;
-  flex-wrap: wrap; /* allows cards to move to the next line when they can't fit */
+  flex-wrap: wrap;
   justify-content: space-around;
-  align-items: flex-start; /* aligns items to the start of the container */
+  align-items: flex-start;
   margin: 0 auto;
   height: 100%;
   width: 80%;
@@ -19,7 +19,7 @@
   border: 1px solid #000;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 1%; /* adds a 1% margin around each card */
+  margin: 1%;
   width: 38%;
 }
 
@@ -50,8 +50,8 @@
   cursor: pointer;
 }
 .card--neutral {
-  background-color: #daa520; /* Gold */
-  color: #000; /* Black */
+  background-color: #daa520;
+  color: #000;
 }
 .card--evil {
   background-color: gray;
@@ -81,13 +81,39 @@
   background-color: #4caf50;
   color: #fff;
 }
-
+.card--neutral {
+  background-color: #daa520;
+  color: #000;
+}
 .card__button--neutral {
-  background-color: teal;
+  background-color: aquamarine;
+  color: navy;
+}
+
+.card--evil {
+  background-color: gray;
+  color: #fff;
+}
+.card__button--evil {
+  background-color: navy;
+  color: #fff;
+}
+.card--good {
+  background-color: #add8e6;
+  color: #000;
+}
+
+.card__button--good {
+  background-color: peachpuff;
+  color: #000;
+}
+
+.card--bad {
+  background-color: darkolivegreen;
   color: #fff;
 }
 
-.card__button--evil {
-  background-color: navy;
+.card__button--bad {
+  background-color: brown;
   color: #fff;
 }
