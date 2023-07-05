@@ -1,7 +1,50 @@
-/* You can delete / re-write this img class  */
+/* ==============
+   STRUCTURE
+   ============== */
 
-img {
-    max-width: 200px;
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 80%;
 }
 
-/* Happy coding! */
+.card {
+  width: 40%;
+  padding: 16px;
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card__title {
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.card__image {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.card__description {
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+/* ==============
+   SKINS
+   ============== */
+
+.card--dark {
+  background-color: #151515;
+  color: #fff;
+}
+
+.card--light {
+  background-color: #e8e8e8;
+  color: #333;
+}
