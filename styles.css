@@ -1,3 +1,10 @@
+/* ==============
+   STRUCTURE
+   ============== */
+h1 {
+  text-align: center;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -9,14 +16,28 @@
 }
 
 .card {
-  width: 40%;
-  padding: 16px;
+  width: calc((100% / 3) - 1%);
+  padding: 5px;
   text-align: center;
   border: 1px solid #000;
   border-radius: 10px;
   box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
-  margin: 1%;
-  width: 38%;
+}
+
+.card {
+  /* ==============
+   SKINS
+   ============== */
+}
+@media screen and (max-width: 800px) {
+  .card {
+    width: calc(100% / 2);
+  }
+}
+@media screen and (max-width: 480px) {
+  .card {
+    width: calc(100% / 1);
+  }
 }
 .card__title {
   margin-bottom: 15px;
@@ -88,7 +109,7 @@
   color: #fff;
 }
 .card--bad .card__button--bad {
-  background-color: brown;
+  background-color: rgb(60, 33, 33);
   color: #fff;
 }
 @media screen and (max-width: 800px) {
