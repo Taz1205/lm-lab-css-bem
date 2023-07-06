@@ -1,3 +1,9 @@
+@use "sass:math";
+
+$columns-desktop: 2;
+$columns-tablet: 2;
+$columns-mobile: 1;
+
 $dark: #151515;
 $light: #e8e8e8;
 $black: #000;
@@ -37,14 +43,22 @@ $base-color: yellow;
 }
 
 .card {
-  width: 40%;
   padding: 16px;
   text-align: center;
   border: 1px solid $black;
   border-radius: 10px;
   @include box-shadow;
   margin: 1%;
-  width: 38%;
+  float: left;
+  width: math.div(100%, $columns-desktop);
+
+  @media (max-width: 768px) {
+    width: math.div(100%, $columns-tablet);
+  }
+
+  @media (max-width: 480px) {
+    width: math.div(100%, $columns-mobile);
+  }
 
   &__title {
     margin-bottom: 15px;
