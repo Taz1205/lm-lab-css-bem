@@ -1,36 +1,7 @@
-@use "sass:math";
-
-$columns-desktop: 3;
-$columns-tablet: 2;
-$columns-mobile: 1;
-
-$dark: #151515;
-$light: #e8e8e8;
-$black: #000;
-$white: #fff;
-$gray: #333;
-$dark-side-button: #c00;
-$force-button: #4caf50;
-$evil: gray;
-$navy: navy;
-$aquamarine: aquamarine;
-$good: #add8e6;
-$bad: darkolivegreen;
-$peachpuff: peachpuff;
-$brown: rgb(60, 33, 33);
-$base-color: yellow;
-
-@mixin box-shadow($x: 1px, $y: 5px, $blur: 10px, $color: rgba(0, 0, 0, 0.2)) {
-  box-shadow: $x $y $blur $color;
+@function rem($px) {
+  @return $px / 16px * 1rem;
 }
 
-@function flexible-color($color, $percentage) {
-  @return lighten($color, $percentage);
-}
-
-/* ==============
-   STRUCTURE
-   ============== */
 h1 {
   text-align: center;
 }
@@ -45,120 +16,118 @@ h1 {
   width: 80%;
 }
 
-%base-card {
-  width: calc((100% / #{$columns-desktop}) - 1%);
-  padding: 5px;
+.card {
+  width: calc((100% / 3) - 1%);
+  padding: rem(5);
   text-align: center;
-  border: 1px solid $black;
-  border-radius: 10px;
-  @include box-shadow;
+  border: rem(1) solid #000;
+  border-radius: rem(10);
+  box-shadow: rem(1) rem(5) rem(10) rgba(0, 0, 0, 0.2);
 }
 
-.card {
-  @extend %base-card;
-
-  @media screen and (max-width: 800px) {
-    width: calc((100% / #{$columns-tablet}));
+@media screen and (max-width: rem(800)) {
+  .card {
+    width: calc(100% / 2);
   }
+}
 
-  @media screen and (max-width: 480px) {
-    width: calc((100% / #{$columns-mobile}));
+@media screen and (max-width: rem(480)) {
+  .card {
+    width: calc(100% / 1);
   }
+}
 
-  &__title {
-    margin-bottom: 15px;
-    font-size: 24px;
-    font-weight: bold;
-  }
+.card__title {
+  margin-bottom: rem(15);
+  font-size: rem(24);
+  font-weight: bold;
+}
 
-  &__image {
-    width: 70%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-  }
+.card__image {
+  width: 70%;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
 
-  &__description {
-    margin-bottom: 10px;
-    line-height: 1.5;
-    font-weight: bold;
-  }
+.card__description {
+  margin-bottom: rem(10);
+  line-height: 1.5;
+  font-weight: bold;
+}
 
-  &__button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-  }
+.card__button {
+  padding: rem(10) rem(20);
+  border-radius: rem(5);
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-  /* ==============
-   SKINS
-   ============== */
+.card--dark {
+  background-color: #151515;
+  color: #fff;
+}
 
-  &--dark {
-    background-color: $dark;
-    color: $white;
+.card--dark .card__button--danger {
+  background-color: #c00;
+  color: #fff;
+}
 
-    & .card__button--danger {
-      background-color: $dark-side-button;
-      color: $white;
-    }
-  }
+.card--light {
+  background-color: #e8e8e8;
+  color: #333;
+}
 
-  &--light {
-    background-color: $light;
-    color: $gray;
+.card--light .card__button--safe {
+  background-color: #4caf50;
+  color: #000;
+}
 
-    & .card__button--safe {
-      background-color: $force-button;
-      color: $black;
-    }
-  }
+.card--neutral {
+  background-color: #ffffcc;
+  color: #000;
+}
 
-  &--neutral {
-    background-color: flexible-color($base-color, 40px);
-    color: $black;
+.card--neutral .card__button {
+  background-color: yellow;
+  color: navy;
+}
 
-    & .card__button {
-      background-color: flexible-color($base-color, 0%);
-      color: $navy;
-    }
-  }
+.card--evil {
+  background-color: gray;
+  color: #fff;
+}
 
-  &--evil {
-    background-color: $evil;
-    color: $white;
+.card--evil .card__button--evil {
+  background-color: navy;
+  color: #fff;
+}
 
-    & .card__button--evil {
-      background-color: $navy;
-      color: $white;
-    }
-  }
+.card--good {
+  background-color: #add8e6;
+  color: #000;
+}
 
-  &--good {
-    background-color: $good;
-    color: $black;
+.card--good .card__button--good {
+  background-color: peachpuff;
+  color: #000;
+}
 
-    & .card__button--good {
-      background-color: $peachpuff;
-      color: $black;
-    }
-  }
+.card--bad {
+  background-color: darkolivegreen;
+  color: #fff;
+}
 
-  &--bad {
-    background-color: $bad;
-    color: $white;
+.card--bad .card__button--bad {
+  background-color: rgb(60, 33, 33);
+  color: #fff;
+}
 
-    & .card__button--bad {
-      background-color: $brown;
-      color: $white;
-    }
-  }
-
-  @media screen and (max-width: 800px) {
+@media screen and (max-width: rem(800)) {
+  .card {
     width: 90%;
   }
-
 }

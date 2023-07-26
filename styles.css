@@ -17,103 +17,133 @@ h1 {
 
 .card {
   width: calc((100% / 3) - 1%);
-  padding: 5px;
+  padding: 0.3125rem;
   text-align: center;
-  border: 1px solid #000;
-  border-radius: 10px;
-  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+  border: 0.0625rem solid #000;
+  border-radius: 0.625rem;
+  box-shadow: 0.0625rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
 }
 
-.card {
-  /* ==============
-   SKINS
-   ============== */
-}
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 50rem) {
   .card {
     width: calc(100% / 2);
   }
 }
-@media screen and (max-width: 480px) {
+
+@media screen and (max-width: 30rem) {
   .card {
     width: calc(100% / 1);
   }
 }
+
 .card__title {
-  margin-bottom: 15px;
-  font-size: 24px;
+  margin-bottom: 0.9375rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
+
 .card__image {
   width: 70%;
   height: auto;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
   margin: 0 auto;
 }
+
 .card__description {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   line-height: 1.5;
   font-weight: bold;
 }
+
 .card__button {
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.3125rem;
   border: none;
   font-weight: bold;
   cursor: pointer;
 }
+
+@media screen and (max-width: 50rem) {
+  .card {
+    width: 90%;
+  }
+}
+
+/* ==============
+     SKINS
+     ============== */
+
 .card--dark {
   background-color: #151515;
   color: #fff;
 }
+
 .card--dark .card__button--danger {
   background-color: #c00;
   color: #fff;
 }
+
 .card--light {
   background-color: #e8e8e8;
   color: #333;
 }
+
 .card--light .card__button--safe {
   background-color: #4caf50;
   color: #000;
 }
+
 .card--neutral {
   background-color: #ffffcc;
   color: #000;
 }
+
 .card--neutral .card__button {
   background-color: yellow;
   color: navy;
 }
+
 .card--evil {
   background-color: gray;
   color: #fff;
 }
+
 .card--evil .card__button--evil {
   background-color: navy;
   color: #fff;
 }
+
 .card--good {
   background-color: #add8e6;
   color: #000;
 }
+
 .card--good .card__button--good {
   background-color: peachpuff;
   color: #000;
 }
+
 .card--bad {
   background-color: darkolivegreen;
   color: #fff;
 }
+
 .card--bad .card__button--bad {
   background-color: rgb(60, 33, 33);
   color: #fff;
 }
-@media screen and (max-width: 800px) {
-  .card {
-    width: 90%;
-  }
-}/*# sourceMappingURL=styles.css.map */
+.title {
+  font-size: 1.5rem;
+  color: #b74b11;
+}
+.title-large {
+  font-size: 2rem;
+}
+
+.title-center {
+  text-align: center;
+}
+
+/*# sourceMappingURL=styles.css.map */
